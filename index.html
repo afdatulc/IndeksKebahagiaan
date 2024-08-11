@@ -1,7 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
+    
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,39 +26,95 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: OnePage
-  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <link href="assets/css/navbar.css" rel="stylesheet">
+  <link href="assets/css/footer.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
 
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1 class="sitename">Indeks Kebahagiaan</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Beranda<br></a></li>
-          <li><a href="#about">Tentang</a></li>
+          <li><a href="index.html" class="active">Beranda<br></a></li>
+          <li><a href="about.html">Tentang</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-
-      <a class="btn-getstarted" href="#about">Ukur sekarang!</a>
-
+      <a class="btn-getstarted" href="form.html">Ukur sekarang!</a>
     </div>
+    
   </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section">
+
+      <img src="assets/img/hero-bg-abstract.jpg" alt="" data-aos="fade-in" class="">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="zoom-out">
+          <div class="col-xl-7 col-lg-9 text-center">
+            <h1>Berapa Indeks Kebahagiaanmu?</h1>
+            <p>Hanya perlu 5 menit untuk mengukur tingkat kebahagiaanmu</p>
+          </div>
+        </div>
+        <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+          <a href="form.html" class="btn-get-started">Ukur Sekarang!</a>
+        </div>
+      </div>
+      <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28 " preserveAspectRatio="none">
+        <defs>
+          <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+        </defs>
+        <g class="wave1">
+          <use xlink:href="#wave-path" x="50" y="3"></use>
+        </g>
+        <g class="wave2">
+          <use xlink:href="#wave-path" x="50" y="0"></use>
+        </g>
+        <g class="wave3">
+          <use xlink:href="#wave-path" x="50" y="9"></use>
+        </g>
+      </svg>
+
+    </section><!-- /Hero Section -->
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      
+
+      <div class="container">
+
+        <div class="row gy-4">
+          
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>Indeks Kebahagiaan merupakan ukuran pembangunan yang bersifat subjektif ditawarkan untuk melihat persepsi masyarakat, tentang apa yang dirasakan dalam menjalani kehidupan sehari-hari. </p>
+            <a href="about.html" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+
+    <div class="container copyright text-center mt-4">
+      <p><span>Hak Cipta </span>© BPS Kota Surabaya. </strong> <span>All Rights Reserved</span></p>
+    </div>
+
+  </footer>
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

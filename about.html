@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - OnePage Bootstrap Template</title>
+  <title>Starter Page - OnePage Bootstrap Template</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -27,6 +26,9 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/navbar.css" rel="stylesheet">
+  <link href="assets/css/footer.css" rel="stylesheet">
+  <link href="assets/css/about.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: OnePage
@@ -37,26 +39,60 @@
   ======================================================== -->
 </head>
 
-<body class="index-page">
+<body class="starter-page-page">
 
-  <footer id="footer" class="footer light-background">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Indeks Kebahagiaan</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda<br></a></li>
+          <li><a href="about.html" class="active">Tentang</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted" href="form.html">Ukur sekarang!</a>
+    </div>
+  </header>
 
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-5 col-md-12 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">BPS Kota Surabaya</span>
-          </a>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-website"></i></a>
-            <a href="https://www.facebook.com/bpssurabayakota"><i class="bi bi-facebook"></i></a>
-            <a href="https://www.instagram.com/bpskotasurabaya?igsh=MXU4ZDQwMWtzYzY3MA=="><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-tiktok"></i></a>
-          </div>
+  <main class="main">
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details section">
+
+      <div class="container">
+
+        <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+          <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
+          <h3>Apa Itu Kebahagiaan?</h3>
+          <p>
+            Menurut KBBI, kebahagiaan merupakan kesenangan dan ketentraman hidup lahir dan batin. Diartikan juga sebagai sebuah konsep berupa hasil evaluasi kehidupan yang menggambarkan kondisi yang Good Life dan Meaningful Life. Kebahagiaan tidak berbeda dengan life satisfaction, di mana kebahagiaan dapat didefinisikan sebagai "over all appreciation of one's life as a whole" (Veenhoven, 1988).
+          </p>
+          <h3>Bagaimana Mengukur Kebahagiaan?</h3>
+          <p>
+            Pengukuran tingkat kebahagiaan di Indonesia sudah dilakukan sejak tahun 2014 melalui Survei Pengukuran Tingkat Kebahagiaan (SPTK) yang dilaksanakan setiap 3 tahun sekali. Pada tahun 2021, tingkat kebahagiaan penduduk Indonesia diukur dari 3 dimensi yaitu:
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> <span>Kepuasan hidup<i>(life satisfaction)</i></span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Perasaan<i>(affect)</i></span></li>
+            <li><i class="bi bi-check-circle"></i> <span>Makna hidup<i>(eudaimonia)</i></span></li>
+          </ul>
+          <p>
+            <b>Ayo Ukur Tingkat Kebahagiaanmu!</b>
+          </p>
         </div>
 
-    </div>
+      </div>
+
+    </section><!-- /Service Details Section -->
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
 
     <div class="container copyright text-center mt-4">
       <p><span>Hak Cipta </span>© BPS Kota Surabaya. </strong> <span>All Rights Reserved</span></p>
