@@ -274,23 +274,28 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 85px);
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 120px 0 60px 0;
+  padding: 0px;
   overflow: hidden;
 }
 
+
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--nav-color), transparent 5%);
   position: absolute;
   inset: 0;
   z-index: 2;
 }
 
+/* *{
+  border: 1px solid red;
+} */
 .hero img {
   position: absolute;
   inset: 0;
@@ -311,12 +316,13 @@ section,
   font-size: 56px;
   font-weight: 700;
   line-height: 72px;
+  color: color-mix(in srgb, var(--surface-color), transparent 30%);
 }
 
 .hero p {
   margin: 10px 0 0 0;
   font-size: 22px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--surface-color), transparent 50%);
 }
 
 @media (max-width: 992px) {
@@ -402,21 +408,21 @@ section,
 .hero .wave1 use {
   animation: move-forever1 10s linear infinite;
   animation-delay: -2s;
-  fill: var(--default-color);
+  fill: var(--surface-color);
   opacity: 0.6;
 }
 
 .hero .wave2 use {
   animation: move-forever2 8s linear infinite;
   animation-delay: -2s;
-  fill: var(--default-color);
+  fill: var(--surface-color);
   opacity: 0.4;
 }
 
 .hero .wave3 use {
   animation: move-forever3 6s linear infinite;
   animation-delay: -2s;
-  fill: var(--default-color);
+  fill: var(--surface-color);
 }
 
 @keyframes move-forever1 {
@@ -463,7 +469,11 @@ section,
 # About Section
 --------------------------------------------------------------*/
 .about{
-  height: 90vh;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .about .read-more {
   background: var(--accent-color);

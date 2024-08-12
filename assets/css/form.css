@@ -7,14 +7,21 @@
 } */
 .form-section {
   display: none;
-  min-height: 65vh; 
 }
 .form-section.current {
   display: block;
 }
 .form-navigation {
-  text-align: right;
+  display: flex;
+  justify-content: space-between; /* Menempatkan "Kembali" di kiri dan tombol lain di kanan */
+  align-items: center;
   margin-top: 20px;
+}
+
+.form-navigation .ml-auto {
+  margin-left: auto; /* Pastikan div dengan tombol "Lanjut" dan "Kirim" berada di ujung kanan */
+  display: flex;
+  gap: 10px; /* Beri jarak antara tombol "Lanjut" dan "Kirim" */
 }
 /* *{
   border: 1px solid red;
@@ -33,7 +40,7 @@
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   color: var(--default-color);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-  margin: 0;
+  margin: 0px;
 }
 
 .btn-group .btn:hover {
@@ -56,30 +63,29 @@
   justify-content: space-between; 
 }
 
-.form-group label {
+.form-group label{
   display: inline-block; 
   margin-bottom: 10px; 
 }
 
-.form-section .form-control,
-.form-section input[type="range"] {
+.form-section .form-control {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
-  border-radius: 3;
+  border-radius: 3px;
   color: var(--default-color);
   background-color: color-mix(in srgb, var(--background-color), transparent 50%);
   border-color: color-mix(in srgb, var(--default-color), transparent 80%);
 }
 
-.form-section .form-control:focus
-.form-section input[type="range"]:focus {
-  border-color: var(--accent-color);
+.form-section .form-control:focus {
+  border-color: var(--accent-color) !important;
 }
 
 .contact .container {
     display: flex;
     justify-content: center; 
+    min-height: 65vh; 
   }
 
   .contact .info-item h3 {
@@ -111,7 +117,14 @@
 .contact form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
-
+/* *{
+  border: 1px solid red;
+} */
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .input-container {
   display: flex;
   align-items: center;
@@ -120,28 +133,143 @@
 
 .input-container label {
   flex-grow: 1;
-  padding: 0 10px; /* Sesuaikan padding di sini */
+  padding: 0; /* Sesuaikan padding di sini */
   margin: 0; /* Menghilangkan margin default */
+  font-size: 16px; /* Sesuaikan ukuran font */
 }
 
 .input-container .emoji {
-  padding: 0 10px; /* Sesuaikan padding di sini */
+  padding: 0; /* Sesuaikan padding di sini */
   margin: 0; /* Menghilangkan margin default */
-  font-size: 30px;
+  font-size: 25px; /* Sesuaikan ukuran font emoji */
 }
 
 .slider-wrapper {
-  margin-top: 10px; /* Memberi jarak antara slider dan label/emoji */
+  margin-top: 5px; /* Memberi jarak antara slider dan label/emoji */
 }
 
 .range-labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px; /* Jarak antara slider dan range labels */
+  margin-top: 5px; 
+  font-size: 12px; 
 }
 
 .range-labels .label-start,
 .range-labels .label-end {
   flex-grow: 1;
+  text-align: left; /* Teks di kiri */
+}
+
+.range-labels .label-end {
+  text-align: right; /* Teks di kanan */
+}
+
+
+.slider-container {
+  width: 100%;
   text-align: center;
+  margin: 20px 0;
+}
+/* 
+.slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  margin-bottom: 10px;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  cursor: pointer;
+} */
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-labels span {
+  font-size: 14px;
+  color: #555;
+}
+
+#happinessIndex {
+  font-size: 3rem; /* Ukuran font besar untuk indeks */
+}
+
+#happinessCategory {
+  font-size: 1.5rem; /* Ukuran font sedang untuk kategori */
+}
+
+#happinessImage {
+  max-width: 100%; /* Pastikan gambar responsif */
+  height: auto; /* Pertahankan rasio aspek gambar */
+}
+
+.contact .btn-next,
+.contact .btn-next:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 30px 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.contact .btn-next:hover,
+.contact .btn-next:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.contact .btn-prev,
+.contact .btn-prev:focus {
+  color: var(--contrast-color);
+  background: #555;
+  font-size: 14px;
+  padding: 8px 25px;
+  margin: 30px 0;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.contact .btn-prevt:hover,
+.contact .btn-prev:focus:hover {
+  color: var(--contrast-color);
+  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+}
+
+.progress {
+  height: 20px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+.progress-bar {
+  background-color:var(--accent-color);
+  height: 100%;
 }
