@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Indeks Kebahagiaan</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/navbar.css" rel="stylesheet">
+  <link href="assets/css/footer.css" rel="stylesheet">
+  <link href="assets/css/about.css" rel="stylesheet">
+  <link href="assets/css/form.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: OnePage
+  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="starter-page-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">Indeks Kebahagiaan</h1>
+      </a>
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Beranda<br></a></li>
+          <li><a href="about.html">Tentang</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+      <a class="btn-getstarted" href="form.html">Ukur</a>
+    </div>
+  </header>
+
+  <main class="main">
+    <section id="contact" class="contact section">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="col-lg-8">
+          <form id="happiness-form" action="" method="post" data-aos="fade-up" data-aos-delay="200">
+            <!-- Identitas Section -->
+            <div class="form-section current">
+              <h3>Identitas</h3>
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label for="nama">Nama</label>
+                  <input type="text" id="nama" name="nama" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Jenis Kelamin</label>
+                  <div class="btn-group" role="group" aria-label="Jenis Kelamin">
+                    <input type="radio" class="btn-check" name="jk" id="laki-laki" value="Laki-laki" autocomplete="off" required>
+                    <label class="btn btn-outline-primary" for="laki-laki">Laki-laki</label>
+                
+                    <input type="radio" class="btn-check" name="jk" id="perempuan" value="Perempuan" autocomplete="off" required>
+                    <label class="btn btn-outline-primary" for="perempuan">Perempuan</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="umur">Umur</label>
+                  <input type="number" id="umur" name="umur" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label for="status_perkawinan">Status Perkawinan</label>
+                  <select name="status_perkawinan" id="status_perkawinan" class="form-control" required="">
+                    <option value="" disabled selected></option>
+                    <option value="Belum kawin">Belum kawin</option>
+                    <option value="Kawin">Kawin</option>
+                    <option value="Cerai hidup">Cerai hidup</option>
+                    <option value="Cerai mati">Cerai mati</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="pendidikan">Pendidikan Terakhir</label>
+                  <select name="pendidikan" id="pendidikan" class="form-control" required="">
+                    <option value="" disabled selected></option>
+                    <option value="SD/MI/Sederajat">SD/MI/Sederajat</option>
+                    <option value="SMP/MTs/Sederajat">SMP/MTs/Sederajat</option>
+                    <option value="SMA/K/MA/K/Sederajat">SMA/K/MA/K/Sederajat</option>
+                    <option value="Perguruan tinggi">Perguruan tinggi</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <div id="warning-message" class="alert alert-warning d-none" role="alert">
+                    Harap jawab semua pertanyaan
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Kepuasan Hidup Section -->
+            <div class="form-section">
+              <h3>Kepuasan Hidup <i>(Life satisfaction)</i></h3>
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pendidikan dan keterampilan yang dimiliki?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_pendidikan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_pendidikan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_pendidikan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pekerjaan/ usaha/kegiatan utama?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_pekerjaan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_pekerjaan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_pekerjaan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pendapatan rumah tangga?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_pendapatan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_pendapatan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_pendapatan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan kesehatan?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_kesehatan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_kesehatan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_kesehatan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan keharmonisan keluarga?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_keharmonisan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_keharmonisan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_keharmonisan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan ketersediaan waktu luang?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_waktu_luang" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_waktu_luang', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_waktu_luang">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan hubungan sosial terhadap warga di lingkungan sekitar tempat tinggal?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_hub_sosial" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_hub_sosial', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_hub_sosial">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan keadaan lingkungan?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_lingkungan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_lingkungan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_lingkungan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan kondisi keamanan?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_keamanan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_keamanan', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_keamanan">🙂</span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan rumah dan fasilitas rumah?</label>
+                  <div class="slider-wrapper">
+                    <input type="range" name="kepuasan_fas_rumah" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_fas_rumah', this.value)">
+                    <div class="range-labels">
+                      <span class="label-start">Sangat tidak puas</span>
+                      <span class="label-end">Sangat puas</span>
+                    </div>
+                    <span class="emoji" id="emoji_fas_rumah">🙂</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <!-- Perasaan Section -->
+            <div class="form-section">
+              <h3>Perasaan <i>(Affect)</i></h3>
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa senang/riang/gembira Anda dalam menjalani kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R301)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa khawatir/cemas Anda dalam menjalani kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R302)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa tertekan Anda dalam menghadapi masalah di kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R303)" min="1" max="10" class="form-control" required="">
+                </div>
+              </div>
+            </div>
+
+            <!-- Makna Hidup Section -->
+            <div class="form-section">
+              <h3>Makna Hidup <i>(Eudaimonia)</i></h3>
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menentukan keputusan bagi diri sendiri?</label>
+                  <input type="range" name="eudaimonia(1)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menciptakan kondisi yang nyaman bagi diri sendiri?</label>
+                  <input type="range" name="eudaimonia(2)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa konsisten Anda dalam berupaya mengembangkan potensi diri?</label>
+                  <input type="range" name="eudaimonia(3)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa bermanfaat Anda bagi orang lain?</label>
+                  <input type="range" name="eudaimonia(4)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa optimis Anda dengan masa depan?</label>
+                  <input type="range" name="eudaimonia(5)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menerima apapun kondisi yang dialami?</label>
+                  <input type="range" name="eudaimonia(6)" min="1" max="10" class="form-control" required="">
+                </div>
+              </div>
+            </div>
+
+            <!-- Kebahagiaan Hidup Section -->
+            <div class="form-section">
+              <h3>Kebahagiaan Hidup</h3>
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa Bahagia Anda dengan kehidupan secara keseluruhan?</label>
+                  <input type="range" name="kebahagiaan" min="1" max="10" class="form-control" required="">
+                </div>
+              </div>
+              
+            </div>
+    
+    <!-- Navigation Buttons -->
+    <div class="form-navigation">
+      <button type="button" class="previous btn btn-secondary">Previous</button>
+      <button type="button" class="next btn btn-primary">Next</button>
+      <button type="submit" class="btn btn-success" >Submit</button>
+    </div>
+
+  </form>
+</div>
+</div>
+</section>
+</main>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer light-background">
+
+    <div class="container copyright text-center mt-4">
+      <p>© BPS Kota Surabaya</strong></p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="form.js"></script>
+
+</body>
+
+</html>
