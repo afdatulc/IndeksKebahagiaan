@@ -71,6 +71,14 @@ document.addEventListener("DOMContentLoaded", function () {
     updateFormSections();
 });
 
+  
+const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '😄', '🤩'];
+  function updateEmoji(emojiId, value) {
+    const emojiElement = document.getElementById(emojiId);
+    const index = Math.max(0, Math.min(mojis.length - 1, value - 1)); 
+    emojiElement.textContent = mojis[index];
+  }
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   
