@@ -1,12 +1,82 @@
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+/* Untuk mengatur tampilan form */
+.form-section {
+  display: none;
+  min-height: 60vh; 
+}
+.form-section.current {
+  display: block;
+}
+.form-navigation {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/* Mengikuti pengaturan form lainnya */
+.btn-group .btn-check {
+  display: none;
+}
+
+.btn-group .btn {
+  font-size: 14px;
+  width: 100%; /* Membuat tombol memiliki lebar penuh */
+  padding: 10px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  color: var(--default-color);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+  margin: 0;
+}
+
+.btn-group .btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.btn-group .btn-check:checked + .btn {
+  background-color: var(--accent-color); /* Warna tombol saat dipilih */
+  color: var(--contrast-color);
+  border-color: var(--accent-color);
+}
+
+.btn-group .btn + .btn {
+  margin-left: 10px; 
+}
+
+.btn-group {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+
+.form-group label {
+  display: inline-block; 
+  margin-bottom: 10px; 
+}
+
+.form-section .form-control,
+.form-section input[type="range"] {
+  font-size: 14px;
+  padding: 10px 15px;
+  box-shadow: none;
+  border-radius: 3;
+  color: var(--default-color);
+  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.form-section .form-control:focus
+.form-section input[type="range"]:focus {
+  border-color: var(--accent-color);
+}
 
 .contact .container {
     display: flex;
-    justify-content: center; /* Mengatur konten berada di tengah secara horizontal */
+    justify-content: center; 
   }
-
 
 .contact .info-item h3 {
   padding: 0;
@@ -25,31 +95,7 @@
   height: 100%;
 }
 
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
+.contact form button[type=submit] {
   color: var(--contrast-color);
   background: var(--accent-color);
   border: 0;
@@ -58,6 +104,7 @@
   border-radius: 4px;
 }
 
-.contact .php-email-form button[type=submit]:hover {
+.contact form button[type=submit]:hover {
   background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
+

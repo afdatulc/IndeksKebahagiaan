@@ -462,7 +462,9 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
-
+.about{
+  height: 90vh;
+}
 .about .read-more {
   background: var(--accent-color);
   color: var(--contrast-color);

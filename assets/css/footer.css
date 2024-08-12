@@ -3,15 +3,14 @@
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: var(--accent-color);
   border-top: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
   font-size: 14px;
-  padding-bottom: 50px;
   position: relative;
 }
 
 .footer .copyright {
-  padding-top: 25px;
+  /* padding-top: 25px; */
   padding-bottom: 25px;
   background-color: var(--accent-color);
   color: var(--contrast-color);

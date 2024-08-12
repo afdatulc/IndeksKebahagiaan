@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Starter Page - OnePage Bootstrap Template</title>
+  <title>Indeks Kebahagiaan</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -52,11 +52,11 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html">Beranda<br></a></li>
-          <li><a href="about.html" class="active">Tentang</a></li>
+          <li><a href="about.html">Tentang</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
-      <a class="btn-getstarted" href="form.html">Ukur sekarang!</a>
+      <a class="btn-getstarted" href="form.html">Ukur</a>
     </div>
   </header>
 
@@ -65,145 +65,166 @@
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <div class="col-lg-8">
           <form id="happiness-form" action="" method="post" data-aos="fade-up" data-aos-delay="200">
-
             <!-- Identitas Section -->
             <div class="form-section current">
               <h3>Identitas</h3>
               <div class="row gy-4">
-                <div class="col-md-6">
-                  <input type="text" name="nama" class="form-control" placeholder="Nama" required="">
+                <div class="form-group">
+                  <label for="nama">Nama</label>
+                  <input type="text" id="nama" name="nama" class="form-control" required="">
                 </div>
-                <div class="col-md-6">
-                  <select name="jk" class="form-control" required="">
-                    <option value="" disabled selected>Jenis Kelamin</option>
-                    <option value="male">Laki-laki</option>
-                    <option value="female">Perempuan</option>
+                <div class="form-group">
+                  <label>Jenis Kelamin</label>
+                  <div class="btn-group" role="group" aria-label="Jenis Kelamin">
+                    <input type="radio" class="btn-check" name="jk" id="laki-laki" value="Laki-laki" autocomplete="off" required>
+                    <label class="btn btn-outline-primary" for="laki-laki">Laki-laki</label>
+                
+                    <input type="radio" class="btn-check" name="jk" id="perempuan" value="Perempuan" autocomplete="off" required>
+                    <label class="btn btn-outline-primary" for="perempuan">Perempuan</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="umur">Umur</label>
+                  <input type="number" id="umur" name="umur" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label for="status_perkawinan">Status Perkawinan</label>
+                  <select name="status_perkawinan" id="status_perkawinan" class="form-control" required="">
+                    <option value="" disabled selected></option>
+                    <option value="Belum kawin">Belum kawin</option>
+                    <option value="Kawin">Kawin</option>
+                    <option value="Cerai hidup">Cerai hidup</option>
+                    <option value="Cerai mati">Cerai mati</option>
                   </select>
                 </div>
-                <div class="col-md-6">
-                  <input type="number" name="umur" class="form-control" placeholder="Umur" required="">
-                </div>
-                <div class="col-md-6">
-                  <select name="status_perkawinan" class="form-control" required="">
-                    <option value="" disabled selected>Status Perkawinan</option>
-                    <option value="single">Belum Menikah</option>
-                    <option value="married">Menikah</option>
-                    <option value="divorced">Cerai</option>
+                <div class="form-group">
+                  <label for="pendidikan">Pendidikan Terakhir</label>
+                  <select name="pendidikan" id="pendidikan" class="form-control" required="">
+                    <option value="" disabled selected></option>
+                    <option value="SD/MI/Sederajat">SD/MI/Sederajat</option>
+                    <option value="SMP/MTs/Sederajat">SMP/MTs/Sederajat</option>
+                    <option value="SMA/K/MA/K/Sederajat">SMA/K/MA/K/Sederajat</option>
+                    <option value="Perguruan tinggi">Perguruan tinggi</option>
                   </select>
                 </div>
-                <div class="col-md-12">
-                  <select name="pendidikan" class="form-control" required="">
-                    <option value="" disabled selected>Pendidikan Tertinggi yang Ditamatkan</option>
-                    <option value="sd">SD</option>
-                    <option value="smp">SMP</option>
-                    <option value="sma">SMA</option>
-                    <option value="diploma">Diploma</option>
-                    <option value="sarjana">Sarjana</option>
-                    <option value="lainnya">Lainnya</option>
-                  </select>
+                <div class="form-group">
+                  <div id="warning-message" class="alert alert-warning d-none" role="alert">
+                    Harap jawab semua pertanyaan
+                  </div>
                 </div>
               </div>
             </div>
-
+            
             <!-- Kepuasan Hidup Section -->
             <div class="form-section">
               <h3>Kepuasan Hidup</h3>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan pendidikan dan keterampilan yang dimiliki?</label>
-                <input type="range" name="kepuasan_pendidikan" min="1" max="10" class="form-control" required="">
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pendidikan dan keterampilan yang dimiliki?</label>
+                  <input type="range" name="kepuasan_pendidikan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pekerjaan/ usaha/kegiatan utama?</label>
+                  <input type="range" name="kepuasan_pekerjaan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan pendapatan rumah tangga?</label>
+                  <input type="range" name="kepuasan_pendapatan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan kesehatan?</label>
+                  <input type="range" name="kepuasan_kesehatan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan keharmonisan keluarga?</label>
+                  <input type="range" name="kepuasan_keharmonisan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan ketersediaan waktu luang?</label>
+                  <input type="range" name="kepuasan_waktu_luang" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan hubungan sosial terhadap warga di lingkungan sekitar tempat tinggal?</label>
+                  <input type="range" name="kepuasan_hub_sosial" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan keadaan lingkungan?</label>
+                  <input type="range" name="kepuasan_lingkungan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan kondisi keamanan?</label>
+                  <input type="range" name="kepuasan_keamanan" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa puas Anda dengan rumah dan fasilitas rumah?</label>
+                  <input type="range" name="kepuasan_fas_rumah" min="1" max="10" class="form-control" required="">
+                </div>
               </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan pekerjaan/ usaha/kegiatan utama?</label>
-                <input type="range" name="kepuasan_pekerjaan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan pendapatan rumah tangga?</label>
-                <input type="range" name="kepuasan_pendapatan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan kesehatan?</label>
-                <input type="range" name="kepuasan_kesehatan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan keharmonisan keluarga?</label>
-                <input type="range" name="kepuasan_keharmonisan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan ketersediaan waktu luang?</label>
-                <input type="range" name="kepuasan_waktu_luang" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan hubungan sosial terhadap warga di lingkungan sekitar tempat tinggal?</label>
-                <input type="range" name="kepuasan_hub_sosial" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan keadaan lingkungan?</label>
-                <input type="range" name="kepuasan_lingkungan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan kondisi keamanan?</label>
-                <input type="range" name="kepuasan_keamanan" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa puas Anda dengan rumah dan fasilitas rumah?</label>
-                <input type="range" name="kepuasan_fas_rumah" min="1" max="10" class="form-control" required="">
-              </div>
+              
             </div>
 
             <!-- Perasaan Section -->
             <div class="form-section">
               <h3>Perasaan</h3>
-              <div class="form-group">
-                <label>Seberapa senang/riang/gembira Anda dalam menjalani kehidupan sehari-hari?</label>
-                <input type="range" name="afeksi(R301)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa khawatir/cemas Anda dalam menjalani kehidupan sehari-hari?</label>
-                <input type="range" name="afeksi(R302)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa tertekan Anda dalam menghadapi masalah di kehidupan sehari-hari?</label>
-                <input type="range" name="afeksi(R303)" min="1" max="10" class="form-control" required="">
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa senang/riang/gembira Anda dalam menjalani kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R301)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa khawatir/cemas Anda dalam menjalani kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R302)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa tertekan Anda dalam menghadapi masalah di kehidupan sehari-hari?</label>
+                  <input type="range" name="afeksi(R303)" min="1" max="10" class="form-control" required="">
+                </div>
               </div>
             </div>
 
             <!-- Makna Hidup Section -->
             <div class="form-section">
               <h3>Makna Hidup</h3>
-              <div class="form-group">
-                <label>Seberapa mampu Anda menentukan keputusan bagi diri sendiri?</label>
-                <input type="range" name="eudaimonia(1)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa mampu Anda menciptakan kondisi yang nyaman bagi diri sendiri?</label>
-                <input type="range" name="eudaimonia(2)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa konsisten Anda dalam berupaya mengembangkan potensi diri?</label>
-                <input type="range" name="eudaimonia(3)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa bermanfaat Anda bagi orang lain?</label>
-                <input type="range" name="eudaimonia(4)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa optimis Anda dengan masa depan?</label>
-                <input type="range" name="eudaimonia(5)" min="1" max="10" class="form-control" required="">
-              </div>
-              <div class="form-group">
-                <label>Seberapa mampu Anda menerima apapun kondisi yang dialami?</label>
-                <input type="range" name="eudaimonia(6)" min="1" max="10" class="form-control" required="">
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menentukan keputusan bagi diri sendiri?</label>
+                  <input type="range" name="eudaimonia(1)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menciptakan kondisi yang nyaman bagi diri sendiri?</label>
+                  <input type="range" name="eudaimonia(2)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa konsisten Anda dalam berupaya mengembangkan potensi diri?</label>
+                  <input type="range" name="eudaimonia(3)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa bermanfaat Anda bagi orang lain?</label>
+                  <input type="range" name="eudaimonia(4)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa optimis Anda dengan masa depan?</label>
+                  <input type="range" name="eudaimonia(5)" min="1" max="10" class="form-control" required="">
+                </div>
+                <div class="form-group">
+                  <label>Seberapa mampu Anda menerima apapun kondisi yang dialami?</label>
+                  <input type="range" name="eudaimonia(6)" min="1" max="10" class="form-control" required="">
+                </div>
               </div>
             </div>
 
             <!-- Kebahagiaan Hidup Section -->
             <div class="form-section">
               <h3>Kebahagiaan Hidup</h3>
-              <div class="form-group">
-                <label>Seberapa Bahagia Anda dengan kehidupan secara keseluruhan?</label>
-                <input type="range" name="kebahagiaan" min="1" max="10" class="form-control" required="">
+              <div class="row gy-4">
+                <div class="form-group">
+                  <label>Seberapa Bahagia Anda dengan kehidupan secara keseluruhan?</label>
+                  <input type="range" name="kebahagiaan" min="1" max="10" class="form-control" required="">
+                </div>
               </div>
+              
             </div>
+    
     <!-- Navigation Buttons -->
     <div class="form-navigation">
       <button type="button" class="previous btn btn-secondary">Previous</button>
@@ -221,7 +242,7 @@
   <footer id="footer" class="footer light-background">
 
     <div class="container copyright text-center mt-4">
-      <p><span>Hak Cipta </span>© BPS Kota Surabaya. </strong> <span>All Rights Reserved</span></p>
+      <p>© BPS Kota Surabaya</strong></p>
     </div>
 
   </footer>
