@@ -227,50 +227,99 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
     const formData = new FormData(form);
     
     // Penimbang untuk masing-masing faktor
+    // const weights = {
+    //   'kepuasan_pendidikan': 0.1308,
+    //   'kepuasan_pekerjaan': 0.1312,
+    //   'kepuasan_pendapatan': 0.1464,
+    //   'kepuasan_kesehatan': 0.0985,
+    //   'kepuasan_keharmonisan': 0.0721,
+    //   'kepuasan_waktu_luang': 0.0743,
+    //   'kepuasan_hub_sosial': 0.073,
+    //   'kepuasan_lingkungan': 0.0701,
+    //   'kepuasan_keamanan': 0.0714,
+    //   'kepuasan_fas_rumah': 0.1322,
+    //   'afeksi(R301)': 0.30,
+    //   'afeksi(R302)': 0.59,
+    //   'afeksi(R303)': 0.11,
+    //   'eudaimonia(1)': 0.12,
+    //   'eudaimonia(2)': 0.09,
+    //   'eudaimonia(3)': 0.06,
+    //   'eudaimonia(4)': 0.07,
+    //   'eudaimonia(5)': 0.11,
+    //   'eudaimonia(6)': 0.55,
+    //   'kepuasan': 0.18,
+    //   'afeksi':0.55,
+    //   'eudaimonia': 0.27
+    // };
+    
+    // // Hitung Indeks Kebahagiaan
+    // let happinessIndex = 0;
+    // for (let key in weights) {
+    //   const value = parseFloat(formData.get(key)) || 0;
+    //   happinessIndex += value * weights[key];
+    // }
     const weights = {
-      'kepuasan_pendidikan': 0.1308,
-      'kepuasan_pekerjaan': 0.1312,
-      'kepuasan_pendapatan': 0.1464,
-      'kepuasan_kesehatan': 0.0985,
-      'kepuasan_keharmonisan': 0.0721,
-      'kepuasan_waktu_luang': 0.0743,
-      'kepuasan_hub_sosial': 0.073,
-      'kepuasan_lingkungan': 0.0701,
-      'kepuasan_keamanan': 0.0714,
-      'kepuasan_fas_rumah': 0.1322
+      'kepuasan': 0.18,
+      'afeksi': 0.55,
+      'eudaimonia': 0.27
     };
     
-    // Hitung Indeks Kebahagiaan
-    let happinessIndex = 0;
-    for (let key in weights) {
-      const value = parseFloat(formData.get(key)) || 0;
-      happinessIndex += value * weights[key];
-    }
+    let kepuasanIndex = 0;
+    let afeksiIndex = 0;
+    let eudaimoniaIndex = 0;
+    
+    // Menghitung indeks kepuasan
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_pendidikan')) || 0) * 0.1308;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_pekerjaan')) || 0) * 0.1312;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_pendapatan')) || 0) * 0.1464;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_kesehatan')) || 0) * 0.0985;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_keharmonisan')) || 0) * 0.0721;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_waktu_luang')) || 0) * 0.0743;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_hub_sosial')) || 0) * 0.073;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_lingkungan')) || 0) * 0.0701;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_keamanan')) || 0) * 0.0714;
+    kepuasanIndex += (parseFloat(formData.get('kepuasan_fas_rumah')) || 0) * 0.1322;
+    
+    // Menghitung indeks afeksi
+    afeksiIndex += (parseFloat(formData.get('afeksi(R301)')) || 0) * 0.30;
+    afeksiIndex += (parseFloat(formData.get('afeksi(R302)')) || 0) * 0.59;
+    afeksiIndex += (parseFloat(formData.get('afeksi(R303)')) || 0) * 0.11;
+    
+    // Menghitung indeks eudaimonia
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(1)')) || 0) * 0.12;
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(2)')) || 0) * 0.09;
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(3)')) || 0) * 0.06;
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(4)')) || 0) * 0.07;
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(5)')) || 0) * 0.11;
+    eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(6)')) || 0) * 0.55;
+    
+    // Menghitung Indeks Kebahagiaan akhir
+    let happinessIndex = (kepuasanIndex * weights['kepuasan'] + afeksiIndex * weights['afeksi'] + eudaimoniaIndex * weights['eudaimonia']) * 10;    
     
     // Tentukan kategori berdasarkan Indeks Kebahagiaan
     let imageUrl = 'assets/img/details-2.png'; // URL gambar default
     
      // Tentukan kategori dan kutipan berdasarkan Indeks Kebahagiaan
      let range = '';
-     if (happinessIndex <= 1) {
+     if (happinessIndex <= 10) {
       range = '0-1';
-      } else if (happinessIndex <= 2) {
+      } else if (happinessIndex <= 20) {
           range = '1-2';
-      } else if (happinessIndex <= 3) {
+      } else if (happinessIndex <= 30) {
           range = '2-3';
-      } else if (happinessIndex <= 4) {
+      } else if (happinessIndex <= 40) {
           range = '3-4';
-      } else if (happinessIndex <= 5) {
+      } else if (happinessIndex <= 50) {
           range = '4-5';
-      } else if (happinessIndex <= 6) {
+      } else if (happinessIndex <= 60) {
           range = '5-6';
-      } else if (happinessIndex <= 7) {
+      } else if (happinessIndex <= 70) {
           range = '6-7';
-      } else if (happinessIndex <= 8) {
+      } else if (happinessIndex <= 80) {
           range = '7-8';
-      } else if (happinessIndex <= 9) {
+      } else if (happinessIndex <= 90) {
           range = '8-9';
-      } else if (happinessIndex <= 10) {
+      } else if (happinessIndex <= 100) {
           range = '9-10';
       } else {
           range = 'Di luar rentang yang diharapkan';
