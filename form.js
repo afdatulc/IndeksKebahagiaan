@@ -92,7 +92,17 @@ const quotes = {
     ]
 };
 
+function getFormattedTimestamp() {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
 
+  return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     const formSections = document.querySelectorAll(".form-section");
@@ -135,23 +145,37 @@ document.addEventListener("DOMContentLoaded", function () {
       const currentSection = formSections[index];
       let valid = true;
 
-      currentSection.querySelectorAll('input, select').forEach(field => {
-          if (field.name === 'umur') {
-              const umur = parseInt(field.value, 10);
-              if (umur < 0 || umur > 100) {
-                  valid = false;
-                  warningMessage.classList.remove("d-none");
-                  warningMessage.textContent = "Umur harus di antara 0 hingga 100";
-                  field.focus();
-                  return;
-              }
-          } else if (field.required && !field.value) {
+      currentSection.querySelectorAll('input, select,number,option').forEach(field => {
+        if (field.name === 'umur') {
+          const umur = field.value.trim(); // Menghapus spasi dari nilai input
+          if (umur === "" || isNaN(umur) || umur < 0 || umur > 100) {
               valid = false;
               warningMessage.classList.remove("d-none");
-              warningMessage.textContent = "Harap jawab semua pertanyaan";
+              if (umur === "") {
+                  warningMessage.textContent = "Harap jawab semua pertanyaan";
+              } else {
+                  warningMessage.textContent = "Umur harus di antara 0 hingga 100";
+              }
               field.focus();
               return;
           }
+          } else if (field.type === 'radio' && field.required) {
+            const radioGroup = currentSection.querySelectorAll(`input[name="${field.name}"]`);
+            const isRadioChecked = Array.from(radioGroup).some(radio => radio.checked);
+            if (!isRadioChecked) {
+                valid = false;
+                warningMessage.classList.remove("d-none");
+                warningMessage.textContent = "Harap jawab semua pertanyaan";
+                field.focus();
+                return;
+            }
+        } else if (field.required && !field.value) {
+            valid = false;
+            warningMessage.classList.remove("d-none");
+            warningMessage.textContent = "Harap jawab semua pertanyaan";
+            field.focus();
+            return;
+        }
       });
 
       if (valid) {
@@ -228,19 +252,29 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
     
      // Tentukan kategori dan kutipan berdasarkan Indeks Kebahagiaan
      let range = '';
-     if (happinessIndex < 1) {
-         range = '0-1';
-     } else if (happinessIndex < 2) {
-         range = '1-2';
-     } else if (happinessIndex < 3) {
-         range = '2-3';
-     } else if (happinessIndex < 4) {
-         range = '3-4';
-     } else if (happinessIndex < 5) {
-         range = '4-5';
-     } else {
-         range = '5-6';
-     }
+     if (happinessIndex <= 1) {
+      range = '0-1';
+      } else if (happinessIndex <= 2) {
+          range = '1-2';
+      } else if (happinessIndex <= 3) {
+          range = '2-3';
+      } else if (happinessIndex <= 4) {
+          range = '3-4';
+      } else if (happinessIndex <= 5) {
+          range = '4-5';
+      } else if (happinessIndex <= 6) {
+          range = '5-6';
+      } else if (happinessIndex <= 7) {
+          range = '6-7';
+      } else if (happinessIndex <= 8) {
+          range = '7-8';
+      } else if (happinessIndex <= 9) {
+          range = '8-9';
+      } else if (happinessIndex <= 10) {
+          range = '9-10';
+      } else {
+          range = 'Di luar rentang yang diharapkan';
+      }
      
      // Pilih kutipan dan gambar secara acak dari rentang yang sesuai
      const quotesArray = quotes[range];
@@ -248,6 +282,9 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
  
      // Tambahkan Indeks Kebahagiaan ke formData
      formData.append('indeks_kebahagiaan', happinessIndex);
+	 
+	 const timestamp = getFormattedTimestamp();
+    formData.append('timestamp', timestamp);
      
      // Kirim data ke Google Sheets
      fetch(scriptURL, { method: 'POST', body: formData })
@@ -257,16 +294,6 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
          document.getElementById('happinessCategory').textContent = randomQuote.text;
          document.getElementById('happinessImage').src = imageUrl;
  
-      //    const modal = new bootstrap.Modal(document.getElementById('happinessModal'));
-      //    modal.show();
- 
-      //    // Event listener untuk mereload halaman saat modal ditutup
-      //    modal._element.addEventListener('hidden.bs.modal', function () {
-      //      location.reload();
-      //    });
-      //  })
-      //  .catch(error => console.error('Error!', error.message));
-    // Konfigurasi dan tampilkan modal
     const modalElement = document.getElementById('happinessModal');
     const modal = new bootstrap.Modal(modalElement, {
       backdrop: 'static',  // Mengatur backdrop agar tidak menutup modal saat diklik di luar
@@ -282,27 +309,6 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
   .catch(error => console.error('Error!', error.message));
     });
 
-  //   document.addEventListener('DOMContentLoaded', function() {
-  //     var sliders = document.querySelectorAll('.form-range');
-      
-  //     sliders.forEach(function(slider) {
-  //         var rangeValue = slider.nextElementSibling;
-          
-  //         function updateValue() {
-  //             rangeValue.textContent = slider.value;
-  //             var thumbWidth = 24; // Ukuran thumb slider
-  //             var sliderWidth = slider.offsetWidth;
-  //             var valuePosition = ((slider.value - slider.min) / (slider.max - slider.min)) * (sliderWidth - thumbWidth);
-  //             rangeValue.textContent = slider.value;
-  //             rangeValue.style.left = `calc(${valuePosition}px + ${thumbWidth / 2}px)`; 
-  //     }
-          
-  //         slider.addEventListener('input', updateValue);
-          
-  //         // Set initial value
-  //         updateValue();
-  //     });
-  // });
 
   document.addEventListener('DOMContentLoaded', function() {
     var sliders = document.querySelectorAll('.form-range');
