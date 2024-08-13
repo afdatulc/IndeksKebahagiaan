@@ -145,14 +145,11 @@
   font-size: 25px; /* Sesuaikan ukuran font emoji */
 }
 
-.slider-wrapper {
-  margin-top: 5px; /* Memberi jarak antara slider dan label/emoji */
-}
+
 
 .range-labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 5px; 
   font-size: 12px; 
 }
 
@@ -170,42 +167,8 @@
 .slider-container {
   width: 100%;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 0 0 0;
 }
-/* 
-.slider {
-  width: 100%;
-  -webkit-appearance: none;
-  appearance: none;
-  height: 8px;
-  background: #ddd;
-  outline: none;
-  opacity: 0.7;
-  transition: opacity 0.2s;
-  margin-bottom: 10px;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background-color: #4CAF50;
-  border-radius: 50%;
-  cursor: pointer;
-} */
 
 .slider-labels {
   display: flex;
@@ -258,10 +221,10 @@
   transition: 0.3s;
 }
 
-.contact .btn-prevt:hover,
+.contact .btn-prev:hover,
 .contact .btn-prev:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  background: rgba(85, 85, 85, 0.70);
 }
 
 .progress {
@@ -274,3 +237,58 @@
   background-color:var(--accent-color);
   height: 100%;
 }
+
+
+/* Menghapus border dari input range */
+input[type="range"] {
+  -webkit-appearance: none; /* Menghapus gaya default untuk webkit browsers */
+  background: transparent; /* Menghapus background slider */
+  width: 100%; /* Memastikan slider menggunakan lebar penuh */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px; /* Tinggi track */
+  background: var(--nav-color); /* Ganti dengan warna yang diinginkan */
+  border-radius: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Menghapus gaya default untuk webkit browsers */
+  width: 18px; /* Ukuran thumb */
+  height: 18px; /* Ukuran thumb */
+  background: var(--accent-color); /* Ganti dengan warna yang diinginkan */
+  border-radius: 50%; /* Membuat thumb berbentuk lingkaran */
+  cursor: pointer;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 8px; /* Tinggi track */
+  background: var(--nav-color); /* Ganti dengan warna yang diinginkan */
+  border-radius: 4px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 18px; /* Ukuran thumb */
+  height: 18px; /* Ukuran thumb */
+  background: var(--accent-color); /* Ganti dengan warna yang diinginkan */
+  border-radius: 50%; /* Membuat thumb berbentuk lingkaran */
+  cursor: pointer;
+  position: relative; /* Posisi relative agar thumb bisa sejajar */
+}
+
+.slider-container {
+  position: relative;
+}
+
+.range-value {
+  position: absolute;
+  top: -25px; /* Posisi angka di atas slider */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  /* padding: 5px; */
+  border-radius: 4px;
+}
+/* *{
+  border: 1px solid red;
+} */

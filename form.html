@@ -148,8 +148,9 @@
                     <label>Seberapa puas Anda dengan pendidikan dan keterampilan yang dimiliki?</label>
                     <span class="emoji" id="emoji_pendidikan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_pendidikan" min="1" max="10" class="form-control range" required="" oninput="updateEmoji('emoji_pendidikan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_pendidikan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_pendidikan', this.value)">
+                    <div id="rangeValue_pendidikan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -162,8 +163,9 @@
                     <label>Seberapa puas Anda dengan pekerjaan/ usaha/kegiatan utama?</label>
                     <span class="emoji" id="emoji_pekerjaan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_pekerjaan" min="1" max="10" class="form-control range" required="" oninput="updateEmoji('emoji_pekerjaan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_pekerjaan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_pekerjaan', this.value)">
+                    <div id="rangeValue_pekerjaan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -176,8 +178,9 @@
                     <label>Seberapa puas Anda dengan pendapatan rumah tangga?</label>
                     <span class="emoji" id="emoji_pendapatan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_pendapatan" min="1" max="10" class="form-control range" required="" oninput="updateEmoji('emoji_pendapatan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_pendapatan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_pendapatan', this.value)">
+                    <div id="rangeValue_pendapatan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -190,8 +193,9 @@
                     <label>Seberapa puas Anda dengan kesehatan?</label>
                     <span class="emoji" id="emoji_kesehatan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_kesehatan" min="1" max="10" class="form-control range" required="" oninput="updateEmoji('emoji_kesehatan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_kesehatan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_kesehatan', this.value)">
+                    <div id="rangeValue_kesehatan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -204,9 +208,10 @@
                     <label>Seberapa puas Anda dengan keharmonisan keluarga?</label>
                     <span class="emoji" id="emoji_keharmonisan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_keharmonisan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_keharmonisan', this.value)">
-                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_keharmonisan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_keharmonisan', this.value)">
+                    <div id="rangeValue_keharmonisan" class="range-value"></div>
+                    </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
                     <span class="label-end">Sangat puas</span>
@@ -218,8 +223,9 @@
                     <label>Seberapa puas Anda dengan ketersediaan waktu luang?</label>
                     <span class="emoji" id="emoji_waktu_luang">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_waktu_luang" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_waktu_luang', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_waktu_luang" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_waktu_luang', this.value)">
+                    <div id="rangeValue_waktu_luang" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -232,9 +238,10 @@
                     <label>Seberapa puas Anda dengan hubungan sosial terhadap warga di lingkungan sekitar tempat tinggal?</label>
                     <span class="emoji" id="emoji_hub_sosial">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_hub_sosial" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_hub_sosial', this.value)">
-                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_hub_sosial" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_hub_sosial', this.value)">
+                    <div id="rangeValue_hub_sosial" class="range-value"></div>
+                    </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
                     <span class="label-end">Sangat puas</span>
@@ -246,8 +253,9 @@
                     <label>Seberapa puas Anda dengan keadaan lingkungan?</label>
                     <span class="emoji" id="emoji_lingkungan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_lingkungan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_lingkungan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_lingkungan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_lingkungan', this.value)">
+                    <div id="rangeValue_lingkungan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -260,8 +268,9 @@
                     <label>Seberapa puas Anda dengan kondisi keamanan?</label>
                     <span class="emoji" id="emoji_keamanan">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_keamanan" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_keamanan', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_keamanan" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_keamanan', this.value)">
+                    <div id="rangeValue_keamanan" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -274,8 +283,9 @@
                     <label>Seberapa puas Anda dengan rumah dan fasilitas rumah?</label>
                     <span class="emoji" id="emoji_fas_rumah">🙂</span>
                   </div>
-                  <div class="slider-wrapper">
-                    <input type="range" name="kepuasan_fas_rumah" min="1" max="10" class="form-control" required="" oninput="updateEmoji('emoji_fas_rumah', this.value)">
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_fas_rumah', this.value)">
+                    <div id="rangeValue_fas_rumah" class="range-value"></div>
                   </div>
                   <div class="range-labels">
                     <span class="label-start">Sangat tidak puas</span>
@@ -290,17 +300,50 @@
             <div class="form-section">
               <h3>Perasaan <i>(Affect)</i></h3>
               <div class="row gy-4">
+
                 <div class="form-group">
-                  <label>Seberapa senang/riang/gembira Anda dalam menjalani kehidupan sehari-hari?</label>
-                  <input type="range" name="afeksi(R301)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa senang/riang/gembira Anda dalam menjalani kehidupan sehari-hari?</label>
+                    <span class="emoji" id="emoji_afeksi(R301)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_afeksi(R301)', this.value)">
+                    <div id="rangeValue_afeksi(R301)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak senang</span>
+                    <span class="label-end">Sangat senang</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa khawatir/cemas Anda dalam menjalani kehidupan sehari-hari?</label>
-                  <input type="range" name="afeksi(R302)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa khawatir/cemas Anda dalam menjalani kehidupan sehari-hari?</label>
+                    <span class="emoji" id="emoji_afeksi(R302)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_afeksi(R302)', this.value)">
+                    <div id="rangeValue_afeksi(R302)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak khawatir</span>
+                    <span class="label-end">Sangat khawatir</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa tertekan Anda dalam menghadapi masalah di kehidupan sehari-hari?</label>
-                  <input type="range" name="afeksi(R303)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa tertekan Anda dalam menghadapi masalah di kehidupan sehari-hari?</label>
+                    <span class="emoji" id="emoji_afeksi(R303)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_afeksi(R303)', this.value)">
+                    <div id="rangeValue_afeksi(R303)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak tertekan</span>
+                    <span class="label-end">Sangat tertekan</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -309,29 +352,95 @@
             <div class="form-section">
               <h3>Makna Hidup <i>(Eudaimonia)</i></h3>
               <div class="row gy-4">
+
                 <div class="form-group">
+                  <div class="input-container">
                   <label>Seberapa mampu Anda menentukan keputusan bagi diri sendiri?</label>
-                  <input type="range" name="eudaimonia(1)" min="1" max="10" class="form-control" required="">
+                    <span class="emoji" id="eudaimonia(1)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('eudaimonia(1)', this.value)">
+                    <div id="rangeValue_eudaimonia(1)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak mampu</span>
+                    <span class="label-end">Sangat mampu</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa mampu Anda menciptakan kondisi yang nyaman bagi diri sendiri?</label>
-                  <input type="range" name="eudaimonia(2)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa mampu Anda menciptakan kondisi yang nyaman bagi diri sendiri?</label>
+                    <span class="emoji" id="emoji_eudaimonia(2)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_eudaimonia(2)', this.value)">
+                    <div id="rangeValue_eudaimonia(2)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak mampu</span>
+                    <span class="label-end">Sangat mampu</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa konsisten Anda dalam berupaya mengembangkan potensi diri?</label>
-                  <input type="range" name="eudaimonia(3)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa konsisten Anda dalam berupaya mengembangkan potensi diri (meningkatkan pengetahuan, keterampilan, relasi, dsb)?</label>
+                    <span class="emoji" id="emoji_eudaimonia(3)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_eudaimonia(3)', this.value)">
+                    <div id="rangeValue_eudaimonia(3)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak konsisten</span>
+                    <span class="label-end">Sangat konsisten</span>
+                  </div>
                 </div>
+              
                 <div class="form-group">
-                  <label>Seberapa bermanfaat Anda bagi orang lain?</label>
-                  <input type="range" name="eudaimonia(4)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa bermanfaat Anda bagi orang lain?</label>
+                    <span class="emoji" id="emoji_eudaimonia(4)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_eudaimonia(4)', this.value)">
+                    <div id="rangeValue_eudaimonia(4)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak bermanfaat</span>
+                    <span class="label-end">Sangat bermanfaat</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa optimis Anda dengan masa depan?</label>
-                  <input type="range" name="eudaimonia(5)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa optimis Anda dengan masa depan?</label>
+                    <span class="emoji" id="emoji_eudaimonia(5)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_eudaimonia(5)', this.value)">
+                    <div id="rangeValue_eudaimonia(5)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak optimis</span>
+                    <span class="label-end">Sangat optimis</span>
+                  </div>
                 </div>
+
                 <div class="form-group">
-                  <label>Seberapa mampu Anda menerima apapun kondisi yang dialami?</label>
-                  <input type="range" name="eudaimonia(6)" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa mampu Anda menerima apapun kondisi yang dialami?</label>
+                    <span class="emoji" id="emoji_eudaimonia(6)">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_eudaimonia(6)', this.value)">
+                    <div id="rangeValue_eudaimonia(6)" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak mampu</span>
+                    <span class="label-end">Sangat mampu</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -341,8 +450,18 @@
               <h3>Kebahagiaan Hidup</h3>
               <div class="row gy-4">
                 <div class="form-group">
-                  <label>Seberapa Bahagia Anda dengan kehidupan secara keseluruhan?</label>
-                  <input type="range" name="kebahagiaan" min="1" max="10" class="form-control" required="">
+                  <div class="input-container">
+                    <label>Seberapa Bahagia Anda dengan kehidupan secara keseluruhan?</label>
+                    <span class="emoji" id="emoji_kebahagiaan">🙂</span>
+                  </div>
+                  <div class="slider-container">
+                    <input type="range" id="rangeInput" name="kepuasan_fas_rumah" min="1" max="10"  class="form-range" min="0" max="10" required="" oninput="updateEmoji('emoji_kebahagiaan', this.value)">
+                    <div id="rangeValue_kebahagiaan" class="range-value"></div>
+                  </div>
+                  <div class="range-labels">
+                    <span class="label-start">Sangat tidak bahagia</span>
+                    <span class="label-end">Sangat bahagia</span>
+                  </div>
                 </div>
               </div>
               
@@ -358,7 +477,7 @@
               <span id="submitLoader" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
           </button>
       </div>
-  </div>
+    </div>
 
   </form>
 </div>

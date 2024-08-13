@@ -182,6 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
       updateFormSections();
   });
 
+  
 
 const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '😄', '🤩'];
   function updateEmoji(emojiId, value) {
@@ -256,14 +257,75 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
          document.getElementById('happinessCategory').textContent = randomQuote.text;
          document.getElementById('happinessImage').src = imageUrl;
  
-         const modal = new bootstrap.Modal(document.getElementById('happinessModal'));
-         modal.show();
+      //    const modal = new bootstrap.Modal(document.getElementById('happinessModal'));
+      //    modal.show();
  
-         // Event listener untuk mereload halaman saat modal ditutup
-         modal._element.addEventListener('hidden.bs.modal', function () {
-           location.reload();
-         });
-       })
-       .catch(error => console.error('Error!', error.message));
+      //    // Event listener untuk mereload halaman saat modal ditutup
+      //    modal._element.addEventListener('hidden.bs.modal', function () {
+      //      location.reload();
+      //    });
+      //  })
+      //  .catch(error => console.error('Error!', error.message));
+    // Konfigurasi dan tampilkan modal
+    const modalElement = document.getElementById('happinessModal');
+    const modal = new bootstrap.Modal(modalElement, {
+      backdrop: 'static',  // Mengatur backdrop agar tidak menutup modal saat diklik di luar
+      keyboard: false  // Menonaktifkan penutupan dengan keyboard (opsional)
+    });
+    modal.show();
+
+    // Event listener untuk mereload halaman saat modal ditutup
+    modalElement.addEventListener('hidden.bs.modal', function () {
+      location.reload();
+    });
+  })
+  .catch(error => console.error('Error!', error.message));
+    });
+
+  //   document.addEventListener('DOMContentLoaded', function() {
+  //     var sliders = document.querySelectorAll('.form-range');
+      
+  //     sliders.forEach(function(slider) {
+  //         var rangeValue = slider.nextElementSibling;
+          
+  //         function updateValue() {
+  //             rangeValue.textContent = slider.value;
+  //             var thumbWidth = 24; // Ukuran thumb slider
+  //             var sliderWidth = slider.offsetWidth;
+  //             var valuePosition = ((slider.value - slider.min) / (slider.max - slider.min)) * (sliderWidth - thumbWidth);
+  //             rangeValue.textContent = slider.value;
+  //             rangeValue.style.left = `calc(${valuePosition}px + ${thumbWidth / 2}px)`; 
+  //     }
+          
+  //         slider.addEventListener('input', updateValue);
+          
+  //         // Set initial value
+  //         updateValue();
+  //     });
+  // });
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var sliders = document.querySelectorAll('.form-range');
+    
+    sliders.forEach(function(slider) {
+      var rangeValue = slider.nextElementSibling;
+      
+      function updateValue() {
+        var thumbWidth = 24; // Ukuran thumb slider
+        var sliderWidth = slider.offsetWidth;
+        var valuePosition = ((slider.value - slider.min) / (slider.max - slider.min)) * (sliderWidth - thumbWidth);
+        
+        rangeValue.textContent = slider.value;
+        rangeValue.style.left = `calc(${valuePosition}px + ${thumbWidth / 2}px)`; 
+      }
+      
+      slider.addEventListener('input', updateValue);
+      
+      // Set initial value to a specific position, e.g., 6
+      slider.value = 6; // Set initial value
+      updateValue(); // Update the label position
+    });
   });
+  
+
   
