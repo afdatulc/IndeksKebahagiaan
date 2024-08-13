@@ -88,6 +88,11 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
 
   form.addEventListener('submit', e => {
     e.preventDefault();
+
+    const submitButton = document.querySelector("button[type='submit']");
+    const spinner = submitButton.querySelector(".spinner-border");
+    spinner.classList.remove("d-none");
+    submitButton.disabled = true;
     
     // Ambil nilai dari form
     const formData = new FormData(form);
@@ -141,6 +146,11 @@ const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '
   
         const modal = new bootstrap.Modal(document.getElementById('happinessModal'));
         modal.show();
+
+         // Event listener untuk mereload halaman saat modal ditutup
+         modal._element.addEventListener('hidden.bs.modal', function () {
+          location.reload();
+        });
       })
       .catch(error => console.error('Error!', error.message));
   });

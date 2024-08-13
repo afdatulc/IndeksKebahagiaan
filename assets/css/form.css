@@ -85,7 +85,7 @@
 .contact .container {
     display: flex;
     justify-content: center; 
-    min-height: 65vh; 
+    min-height: 100vh; 
   }
 
   .contact .info-item h3 {
