@@ -316,13 +316,13 @@ section,
   font-size: 56px;
   font-weight: 700;
   line-height: 72px;
-  color: color-mix(in srgb, var(--surface-color), transparent 30%);
+  color: color-mix(in srgb, var(--surface-color), transparent 10%);
 }
 
 .hero p {
   margin: 10px 0 0 0;
   font-size: 22px;
-  color: color-mix(in srgb, var(--surface-color), transparent 50%);
+  color: color-mix(in srgb, var(--surface-color), transparent 30%);
 }
 
 @media (max-width: 992px) {
