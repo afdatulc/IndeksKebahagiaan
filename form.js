@@ -208,12 +208,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
   
 
-const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '😄', '🤩'];
-  function updateEmoji(emojiId, value) {
+  const mojis = ['😢', '😞', '😟', '😕', '😐', '🙂', '😊', '😃', '😄', '🤩'];
+
+  function updateEmoji(emojiId, value, reverse = false) {
     const emojiElement = document.getElementById(emojiId);
-    const index = Math.max(0, Math.min(mojis.length - 1, value - 1)); 
+    let index;
+    
+    if (reverse) {
+      index = mojis.length - value; // Membalik urutan
+    } else {
+      index = value - 1;
+    }
+  
+    index = Math.max(0, Math.min(mojis.length - 1, index)); // Pastikan indeks tetap dalam rentang yang valid
     emojiElement.textContent = mojis[index];
   }
+  
 
   form.addEventListener('submit', e => {
     e.preventDefault();
