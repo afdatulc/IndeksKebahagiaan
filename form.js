@@ -236,38 +236,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ambil nilai dari form
     const formData = new FormData(form);
     
-    // Penimbang untuk masing-masing faktor
-    // const weights = {
-    //   'kepuasan_pendidikan': 0.1308,
-    //   'kepuasan_pekerjaan': 0.1312,
-    //   'kepuasan_pendapatan': 0.1464,
-    //   'kepuasan_kesehatan': 0.0985,
-    //   'kepuasan_keharmonisan': 0.0721,
-    //   'kepuasan_waktu_luang': 0.0743,
-    //   'kepuasan_hub_sosial': 0.073,
-    //   'kepuasan_lingkungan': 0.0701,
-    //   'kepuasan_keamanan': 0.0714,
-    //   'kepuasan_fas_rumah': 0.1322,
-    //   'afeksi(R301)': 0.30,
-    //   'afeksi(R302)': 0.59,
-    //   'afeksi(R303)': 0.11,
-    //   'eudaimonia(1)': 0.12,
-    //   'eudaimonia(2)': 0.09,
-    //   'eudaimonia(3)': 0.06,
-    //   'eudaimonia(4)': 0.07,
-    //   'eudaimonia(5)': 0.11,
-    //   'eudaimonia(6)': 0.55,
-    //   'kepuasan': 0.18,
-    //   'afeksi':0.55,
-    //   'eudaimonia': 0.27
-    // };
-    
-    // // Hitung Indeks Kebahagiaan
-    // let happinessIndex = 0;
-    // for (let key in weights) {
-    //   const value = parseFloat(formData.get(key)) || 0;
-    //   happinessIndex += value * weights[key];
-    // }
     const weights = {
       'kepuasan': 0.18,
       'afeksi': 0.55,
@@ -304,7 +272,9 @@ document.addEventListener("DOMContentLoaded", function () {
     eudaimoniaIndex += (parseFloat(formData.get('eudaimonia(6)')) || 0) * 0.55;
     
     // Menghitung Indeks Kebahagiaan akhir
-    let happinessIndex = (kepuasanIndex * weights['kepuasan'] + afeksiIndex * weights['afeksi'] + eudaimoniaIndex * weights['eudaimonia']) * 10;    
+    let kebahagiaan = (parseFloat(formData.get('kebahagiaan')) || 0)*10;
+    let totalIndex = (kepuasanIndex * weights['kepuasan'] + afeksiIndex * weights['afeksi'] + eudaimoniaIndex * weights['eudaimonia']) * 10;   
+    let happinessIndex = (kebahagiaan + totalIndex)/2
     
     // Tentukan kategori berdasarkan Indeks Kebahagiaan
     let imageUrl = 'assets/img/details-2.png'; // URL gambar default
