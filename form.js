@@ -144,45 +144,76 @@ document.addEventListener("DOMContentLoaded", function () {
     function isValidSection(index) {
       const currentSection = formSections[index];
       let valid = true;
-
-      currentSection.querySelectorAll('input, select,number,option').forEach(field => {
-        if (field.name === 'umur') {
-          const umur = field.value.trim(); // Menghapus spasi dari nilai input
-          if (umur === "" || isNaN(umur) || umur < 15 || umur > 100) {
+  
+      // Langkah 1: Cek apakah ada field yang kosong terlebih dahulu
+      currentSection.querySelectorAll('input, select').forEach(field => {
+          if (field.required && !field.value.trim()) {
               valid = false;
               warningMessage.classList.remove("d-none");
-              if (umur === "") {
-                  warningMessage.textContent = "Harap jawab semua pertanyaan";
-              } else {
-                  warningMessage.textContent = "Umur harus di antara 15 hingga 100";
-              }
+              warningMessage.textContent = "Harap jawab semua pertanyaan";
               field.focus();
-              return;
+              return false; // Stop iteration if a required field is empty
           }
-          } else if (field.type === 'radio' && field.required) {
-            const radioGroup = currentSection.querySelectorAll(`input[name="${field.name}"]`);
-            const isRadioChecked = Array.from(radioGroup).some(radio => radio.checked);
-            if (!isRadioChecked) {
-                valid = false;
-                warningMessage.classList.remove("d-none");
-                warningMessage.textContent = "Harap jawab semua pertanyaan";
-                field.focus();
-                return;
-            }
-        } else if (field.required && !field.value) {
-            valid = false;
-            warningMessage.classList.remove("d-none");
-            warningMessage.textContent = "Harap jawab semua pertanyaan";
-            field.focus();
-            return;
-        }
       });
-
+  
+      // Jika ada field yang kosong, hentikan proses validasi
+      if (!valid) {
+          return valid;
+      }
+  
+      // Langkah 2: Lanjutkan ke validasi lainnya (Nama, Email, Umur)
+      currentSection.querySelectorAll('input, select').forEach(field => {
+          if (field.name === 'umur') {
+              const umur = field.value.trim();
+              if (isNaN(umur) || umur < 15 || umur > 100) {
+                  valid = false;
+                  warningMessage.classList.remove("d-none");
+                  warningMessage.textContent = "Umur harus di antara 15 hingga 100";
+                  field.focus();
+                  return;
+              }
+          } else if (field.name === 'nama') {
+              const nama = field.value.trim();
+              // Perbarui pola regex untuk mengizinkan ., ', dan `
+              const namePattern = /^[A-Za-z\s.'`-]+$/;
+              if (!namePattern.test(nama)) {
+                  valid = false;
+                  warningMessage.classList.remove("d-none");
+                  warningMessage.textContent = "Nama tidak valid";
+                  field.focus();
+                  return;
+              }
+          } else if (field.name === 'email') {
+              const email = field.value.trim();
+              const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+              if (!emailPattern.test(email)) {
+                  valid = false;
+                  warningMessage.classList.remove("d-none");
+                  warningMessage.textContent = "Email tidak valid";
+                  field.focus();
+                  return;
+              }
+          } else if (field.type === 'radio' && field.required) {
+              const radioGroup = currentSection.querySelectorAll(`input[name="${field.name}"]`);
+              const isRadioChecked = Array.from(radioGroup).some(radio => radio.checked);
+              if (!isRadioChecked) {
+                  valid = false;
+                  warningMessage.classList.remove("d-none");
+                  warningMessage.textContent = "Harap jawab semua pertanyaan";
+                  field.focus();
+                  return;
+              }
+          }
+      });
+  
+      // Jika validasi lolos, sembunyikan pesan peringatan
       if (valid) {
           warningMessage.classList.add("d-none");
       }
       return valid;
   }
+  
+
 
       // Event listener untuk tombol Next
       nextButtons.forEach(button => {
