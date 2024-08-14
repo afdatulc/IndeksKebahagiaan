@@ -148,13 +148,13 @@ document.addEventListener("DOMContentLoaded", function () {
       currentSection.querySelectorAll('input, select,number,option').forEach(field => {
         if (field.name === 'umur') {
           const umur = field.value.trim(); // Menghapus spasi dari nilai input
-          if (umur === "" || isNaN(umur) || umur < 0 || umur > 100) {
+          if (umur === "" || isNaN(umur) || umur < 15 || umur > 100) {
               valid = false;
               warningMessage.classList.remove("d-none");
               if (umur === "") {
                   warningMessage.textContent = "Harap jawab semua pertanyaan";
               } else {
-                  warningMessage.textContent = "Umur harus di antara 0 hingga 100";
+                  warningMessage.textContent = "Umur harus di antara 15 hingga 100";
               }
               field.focus();
               return;
