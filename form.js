@@ -339,11 +339,19 @@ document.addEventListener("DOMContentLoaded", function () {
      // Pilih kutipan dan gambar secara acak dari rentang yang sesuai
      const quotesArray = quotes[range];
      const randomQuote = quotesArray[Math.floor(Math.random() * quotesArray.length)];
+
+     //Hitung masing-masing index
+     let kepuasan_hidup = kepuasanIndex;
+     let afeksi = afeksiIndex;
+     let makna_hidup = eudaimoniaIndex;
  
      // Tambahkan Indeks Kebahagiaan ke formData
+     formData.append('kepuasan_hidup',kepuasan_hidup);
+     formData.append('afeksi',afeksi);
+     formData.append('makna_hidup',makna_hidup);
      formData.append('indeks_kebahagiaan', happinessIndex);
 	 
-	 const timestamp = getFormattedTimestamp();
+	  const timestamp = getFormattedTimestamp();
     formData.append('timestamp', timestamp);
      
      // Kirim data ke Google Sheets
